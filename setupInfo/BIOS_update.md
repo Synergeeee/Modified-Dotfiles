@@ -48,15 +48,24 @@
 ---
 
 # Re-enrolling the TPM 
+
 1) on the computers boot, the TPM isn't going to work and instead of the TPM unlocking the drive automatically, you have to do it manually
     - Use the password or recovery key or anything else to unlock the drive so we can get to the desktop
+
 2) Once we're at the desktop, we need to remove the old TPM key *FIRST* then enroll the new one
 
-3) Run the following command to see the methods that currently work for unlocking the encrytped drive: `sudo systemd-cryptenroll /dev/nvme0n1p2`
+3) run `sudo sbctl status` and make sure that secure boot is active, if not:
+    - go to the bios and make sure it's on 
+    - run `sbctl enroll-keys -m`
+    - make sure nessesary files are signed by running `sbctl verify`
+    - Even if they are signed, resign them to be sure
+    - re-install linux to regenerate mkinitcpio using `sudo pacman -S linux`
+
+4) Run the following command to see the methods that currently work for unlocking the encrytped drive: `sudo systemd-cryptenroll /dev/nvme0n1p2`
     - It'll return a list, in it there may be password, passphrase, recovery code, TPM, ETC, each item on the list is a method that you have previously added to unlock the drive
     - For example, you may see `recovery-code`, this means that earlier during setup of the partition you made a recovery code that can also be used to unlock the encrypted drive, **multiple methods can be used at once to unlock the same partition, we can have 1 or 10 passphrases that all work**
 
-4) Because our old TPM is no longer useful, we need to remove the old TPM key with the following: `sudo systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=<NUMBER_ON_LIST_OF_OLD_TPM>`
+5) Because our old TPM is no longer useful, we need to remove the old TPM key with the following: `sudo systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=<NUMBER_ON_LIST_OF_OLD_TPM>`
     - note the number next to `TPM` on the returned list from above is what's used for `<NUMBER_ON_LIST_OF_OLD_TPM`
     - EG:
 
@@ -69,11 +78,11 @@ sudo systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=1
 // if we used 0, it would wipe the recovery key and because the tpm2 is invalid, we'd be fucked SO BE CAREFUL TO ONLY DELETE THE OLD TPM2
 ```
 
-5) now that the old key is deleted, we can enroll a fresh valid tpm key with: `sudo systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto --tpm2-pcrs=7+15:sha256=0000000000000000000000000000000000000000000000000000000000000000`
+6) now that the old key is deleted, we can enroll a fresh valid tpm key with: `sudo systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto --tpm2-pcrs=7+15:sha256=0000000000000000000000000000000000000000000000000000000000000000`
 
-6) run the following: `sudo systemd-cryptenroll /dev/nvme0n1p2`, the output should now have a fresh `TPM` under `type`
+7) run the following: `sudo systemd-cryptenroll /dev/nvme0n1p2`, the output should now have a fresh `TPM` under `type`
 
-7) restart the computer, everything has now been restored
+8) restart the computer, everything has now been restored
 
 ---
 
