@@ -63,6 +63,8 @@ discord
 
 ### tmux
 - The files needed for tmux are at `.tmux.conf` normally located at `~/` simmilar to `.bashrc`
+- the tmux plugin manager should also be installed via `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+- Don't forget to use <leader> + shift + i to load the plugins!
 
 ---
 
