@@ -6,6 +6,9 @@
 # Getting Started with an install:
 - Install the following base packages:
 ```
+gcc
+clang 
+cmake
 base-devel
 git
 linux
@@ -20,19 +23,22 @@ hyprland
 hyprpaper
 hyprlock
 hyprshot
-gcc
-clang 
-apparmor
-python-pywal
+apparmor(daemon)
 ```
 
 # What to install when you're booted in:
 ```
-pipewire
-pipewire-alsa
+pipewire (daemon)
+pipewire-alsa (daemon)
+python
+python-pywal
+python-pywalfox(yay)
+nodejs
+pyprland
 firefox
 spotify
 discord
+swaync (daemon)
 ```
 # Other info 
 
@@ -63,8 +69,6 @@ discord
 
 ### tmux
 - The files needed for tmux are at `.tmux.conf` normally located at `~/` simmilar to `.bashrc`
-- the tmux plugin manager should also be installed via `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-- Don't forget to use <leader> + shift + i to load the plugins!
 
 ---
 
@@ -79,8 +83,19 @@ discord
 ---
 
 ### `.bashrc` and Starship
-- in order for startship to work properly, we need to 
+- in order for startship to work properly, we need to add `` to the end of our `.bashrc` file located at our home directory
+
+---
 
 ### wal
 - dont forget to run `wal -i /path/to/wallpaper`
+
+---
+
+### git and git-credential-manager
+
+- `git-credential-manager` isn't a package available on `pacman` or the AUR, we need to download the tarball on github and then use `gpg` and `pass` 
+
+- refer to `https://github.com/git-ecosystem/git-credential-manager/tree/main` for the up-to-date instructions
+
 
