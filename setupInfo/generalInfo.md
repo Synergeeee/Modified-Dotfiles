@@ -97,5 +97,3 @@ swaync (daemon)
 - `git-credential-manager` isn't a package available on `pacman` or the AUR, we need to download the tarball on github and then use `gpg` and `pass` 
 
 - refer to `https://github.com/git-ecosystem/git-credential-manager/tree/main` for the up-to-date instructions
-
-
