@@ -15,7 +15,8 @@ return{
             -- misc
             "eslint", -- JSON
             "lua_ls", -- Lua Language server
-            "emmet_ls" -- for emmet 
+            "emmet_ls", -- for emmet 
+            "marksman", -- for markdown
         }
     },
     dependencies = {

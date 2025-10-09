@@ -55,7 +55,7 @@ return {
                       background = true,
                       style = { "bold", "italic" },
                 },
-            },_
+            },
         },
     },
     config = function(_,opts)
