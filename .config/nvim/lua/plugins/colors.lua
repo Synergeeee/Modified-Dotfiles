@@ -1,4 +1,4 @@
--- return {
+ --return {
 -- 	"ellisonleao/gruvbox.nvim",
 -- 	lazy = false,
 -- 	name = "gruvbox",
@@ -9,13 +9,12 @@
 -- }
 
 
-
 --return {
 --    "AlphaTechnolog/pywal.nvim",
 --    lazy = false,
 --    priority = 1000,
 --    config = function()
-       -- Set up pywal and load the colors
+        -- Set up pywal and load the colors
 --        require("pywal").setup()
 --
 --    end,
@@ -28,12 +27,35 @@ return {
     priority = 1000, -- Ensures this colorscheme loads first
     opts = {
         plugins = {
-             lazy = true,
-             alpha = true,
-             markdown = false,
-             noice = true,
-             neotree = true,
-             lazygit = true,
+            lazy = true,
+            alpha = true,
+            markdown = false,
+            mason = true,
+            noice = true,
+            neotree = true,
+            lazygit = true,
+            lsp = {
+                enabled = true,
+                virtual_text = {
+                      errors = { "bold", "italic" },
+                      hints = { "bold", "italic" },
+                      information = { "bold", "italic" },
+                      ok = { "bold", "italic" },
+                      warnings = { "bold", "italic" },
+                      unnecessary = { "bold", "italic" },
+                },
+                underlines = {
+                      errors = { "undercurl" },
+                      hints = { "undercurl" },
+                      information = { "undercurl" },
+                      ok = { "undercurl" },
+                      warnings = { "undercurl" },
+                },
+                inlay_hints = {
+                      background = true,
+                      style = { "bold", "italic" },
+                },
+            },_
         },
     },
     config = function(_,opts)

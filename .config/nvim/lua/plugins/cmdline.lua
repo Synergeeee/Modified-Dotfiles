@@ -10,8 +10,8 @@ return {
     },
     config = function()
         vim.cmd("source ~/.cache/wal/colors-wal.vim")
-        local color9 = vim.g.color9 or "#808080"
-        local color5 = vim.g.color5 or "#ffffff"
+        local color9 = vim.g.color9
+        local color5 = vim.g.color5
         require("noice").setup({
             lsp = {
                 override = {

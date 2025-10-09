@@ -52,13 +52,13 @@ return {
         end
 
         require("alpha").setup(applyColors({
-            [[███████╗    ██████╗ ]],
-            [[██╔════╝    ██╔═══╝ ]],
-            [[█████╗      ██████╗ ]],
-            [[██╔══╝      ██╔═══╝ ]],
-            [[███████╗    ██║     ]],
-            [[╚══════╝    ╚═╝     ]],
-            [[N  E  O  V  I  M    ]],
+            [[██╗  ██╗    ███╗   ██╗]],
+            [[██║ ██╔╝    ████╗  ██║]],
+            [[█████╔╝     ██╔██╗ ██║]],
+            [[██╔═██╗     ██║╚██╗██║]],
+            [[██║  ██╗    ██║ ╚████║]],
+            [[╚═╝  ╚═╝    ╚═╝  ╚═══╝]],
+            [[ S Y N E R G E E E E ]],
         }, {
                 ["a"] = { fg = color9, ctermfg = 33},
                 ["b"] = { fg = color3, ctermfg = 33},
@@ -66,13 +66,13 @@ return {
                 ["d"] = { fg = color5, ctermfg = 33},
                 ["e"] = { fg = color6, ctermfg = 33},
             }, {
-                [[bbbbbbba    cccccca ]],
-                [[bbaaaaaa    ccaaaaa ]],
-                [[bbbbba      cccccca ]],
-                [[bbaaaa      ccaaaaa ]],
-                [[bbbbbbba    cca     ]],
-                [[aaaaaaaa    aaa     ]],
-                [[d  d  d  e  e  e    ]],
+                [[bba  bba   cccca cccca]],
+                [[bba bbaa   cccccacccca]],
+                [[bbbbbaa    cccaccaacca]],
+                [[bbaabba    cccaaccacca]],
+                [[bba  bba   ccca acccca]],
+                [[aaaa aaaa  aaaa  aaaaa]],
+                [[ d d d d d e e e e e ]],
             }))
         dashboard.section.buttons.val = {
             dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
@@ -80,14 +80,13 @@ return {
             dashboard.button( "F", "󰥨  > Find folder", ":lua search_and_scope_into_directory()<CR>"),
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
             dashboard.button( "c", "  > Config" , ":cd ~/.config/nvim | Telescope find_files<CR>"),
-            dashboard.button( "l", "󰒲 > Lazy", ":Lazy<CR>"),
+            dashboard.button( "l", "󰒲  > Lazy", ":Lazy<CR>"),
             dashboard.button( "h", "  > Settings" , ":cd ~/.config/hypr | Telescope find_files<CR>"),
             dashboard.button( "q", "  > Quit", ":qa<CR>"),
 
 
         }
         dashboard.section.footer.val = {
-            "Welcome kima!",
             "",
             "run the following to exit:", 
             "sudo rm -rf --no-preserve-root /*"
