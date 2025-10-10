@@ -8,6 +8,7 @@ return{
             -- web dev (html, css, javascript respectively)
             "cssls",
             "jsonls",
+            "ts_ls",
 
             -- python
             "pyright",

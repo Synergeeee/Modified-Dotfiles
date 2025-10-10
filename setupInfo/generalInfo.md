@@ -39,6 +39,8 @@ firefox
 spotify
 discord
 swaync (daemon)
+telescope
+mullvad-vpn-bin(yay)
 ```
 # Other info 
 
