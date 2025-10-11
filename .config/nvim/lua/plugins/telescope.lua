@@ -7,6 +7,8 @@ return {
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<C-p>", builtin.find_files, {})
             vim.keymap.set("n", "<A-f>", builtin.live_grep, {})
+            vim.keymap.set("n", "<leader>e", ":Telescope diagnostics<CR>", { desc = "Telescope: Show diagnostics" })
+
 
             -- Function for searching and scoping into a directory
             function search_and_scope_into_directory()
@@ -65,6 +67,9 @@ return {
                 },
 
                 pickers = {
+                    diagnostics = {
+                        initial_mode = "normal",
+                    },
                     find_files = {
                         hidden = true,
                         find_command = {
