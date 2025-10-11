@@ -10,7 +10,7 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
--- open up an error message after hovering over it for 200ms
+-- open up an error message after hovering for 200ms
 vim.opt.updatetime = 200
 
 vim.api.nvim_create_autocmd("CursorHold", {
@@ -19,3 +19,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
   end,
 })
 
+-- change buffers more easily with space + p and space + n
+vim.keymap.set("n", "<leader>n", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>p", ":bprevious<CR>", { desc = "Previous buffer" })
