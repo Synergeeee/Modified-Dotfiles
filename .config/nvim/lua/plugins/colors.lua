@@ -34,6 +34,10 @@ return {
             noice = true,
             neotree = true,
             lazygit = true,
+            telescope = {
+                enabled = true,
+                -- style = "nvchad"
+            },
             lsp = {
                 enabled = true,
                 virtual_text = {
