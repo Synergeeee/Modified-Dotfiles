@@ -1,0 +1,69 @@
+ --return {
+-- 	"ellisonleao/gruvbox.nvim",
+-- 	lazy = false,
+-- 	name = "gruvbox",
+-- 	priority = 997,
+-- 	config = function()
+-- 		vim.cmd.colorscheme("gruvbox")
+-- 	end,
+-- }
+
+
+--return {
+--    "AlphaTechnolog/pywal.nvim",
+--    lazy = false,
+--    priority = 1000,
+--    config = function()
+        -- Set up pywal and load the colors
+--        require("pywal").setup()
+--
+--    end,
+--}
+
+return {
+    "RedsXDD/neopywal.nvim",
+    name = "neopywal",
+    lazy = false,
+    priority = 1000, -- Ensures this colorscheme loads first
+    opts = {
+        plugins = {
+            lazy = true,
+            alpha = true,
+            markdown = false,
+            mason = true,
+            noice = true,
+            neotree = true,
+            lazygit = true,
+            telescope = {
+                enabled = true,
+                -- style = "nvchad"
+            },
+            lsp = {
+                enabled = true,
+                virtual_text = {
+                      errors = { "bold", "italic" },
+                      hints = { "bold", "italic" },
+                      information = { "bold", "italic" },
+                      ok = { "bold", "italic" },
+                      warnings = { "bold", "italic" },
+                      unnecessary = { "bold", "italic" },
+                },
+                underlines = {
+                      errors = { "undercurl" },
+                      hints = { "undercurl" },
+                      information = { "undercurl" },
+                      ok = { "undercurl" },
+                      warnings = { "undercurl" },
+                },
+                inlay_hints = {
+                      background = true,
+                      style = { "bold", "italic" },
+                },
+            },
+        },
+    },
+    config = function(_,opts)
+    require("neopywal").setup(opts)
+    vim.cmd.colorscheme("neopywal")
+    end,
+}
