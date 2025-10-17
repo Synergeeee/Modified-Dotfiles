@@ -41,6 +41,16 @@ discord
 swaync (daemon)
 telescope
 mullvad-vpn-bin(yay)
+----- FOR VM'S -------
+libvirt(daemon)
+firewalld(daemon)
+iptables-nft(daemon)
+swtpm 
+dnsmasq
+virt-manager
+qemu-full
+dmidecode
+----------------------
 ```
 # Other info 
 
