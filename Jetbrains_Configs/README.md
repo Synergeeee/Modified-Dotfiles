@@ -5,3 +5,7 @@
 - To use simply go to an open project, then from the dropdown menu: file > manage IDE settings > import settings, then select the zip file for that IDE.
 
 - If you only want to import the keybindings, use `keybind.zip`
+
+# Extra Info
+
+- Note that for clion, there's an extra keybinding for looking at assembly which isn't present in `keybindings.zip` and only inside of `clion.zip`
